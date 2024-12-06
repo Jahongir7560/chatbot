@@ -31,7 +31,7 @@ Before running the application, ensure you have the following installed:
 1. Run the Streamlit application:
 
    ```bash
-   streamlit run app.py
+   streamlit run chatbot.py
    ```
 
 2. Open the application in your browser (Streamlit will provide a local URL).
@@ -42,7 +42,7 @@ Before running the application, ensure you have the following installed:
 
 ## File Structure
 
-- `app.py`: Main application script.
+- `chatbot.py`: Main application script.
 - `yhq.pdf`: PDF file containing traffic rules (to be added).
 - `requirements.txt`: Python dependencies.
 - `README.md`: Project documentation.
