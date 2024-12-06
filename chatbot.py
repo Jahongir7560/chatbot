@@ -24,7 +24,7 @@ def split_and_clean_documents(documents, chunk_size=1000, chunk_overlap=200):
 
 # PDF va vektor do'konni yuklash
 @st.cache_resource
-def load_pdf_and_create_vector_store(file_path, api_key, chunk_size=500, chunk_overlap=100):
+def load_pdf_and_create_vector_store(file_path, api_key, chunk_size=1000, chunk_overlap=200):
     loader = PyPDFLoader(file_path)
     documents = loader.load()
     # Hujjatlarni bo'lish va tozalash
@@ -43,7 +43,7 @@ def get_relevant_text(vector_store, query, top_k=5):
 def get_response(api_key, relevant_text, query):
     openai.api_key = api_key
     messages = [
-        {"role": "system", "content": "Quyidagi faylga asoslangan holda savolga javob ber. Agar fayldagi ma'lumotlardan tashqari savol berilsa, men faqat yo'l harakati qoidalariga oid savollarga javob bera olaman deb ayting."},
+        {"role": "system", "content": "Quyidagi faylga asoslangan holda savolga javob ber. Agar fayldagi ma'lumotlardan tashqari savol berilsa, sizga yo'l harakati qoidalari haqidagi savollarizga yordam bera olaman deb javob qaytar."},
         {"role": "assistant", "content": relevant_text},
         {"role": "user", "content": query},
     ]
