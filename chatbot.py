@@ -43,7 +43,7 @@ def get_relevant_text(vector_store, query, top_k=5):
 def get_response(api_key, relevant_text, query):
     openai.api_key = api_key
     messages = [
-        {"role": "system", "content": "Quyidagi faylga asoslangan holda savolga javob ber. Agar fayldagi ma'lumotlardan tashqari savol berilsa, sizga yo'l harakati qoidalari haqidagi savollarizga yordam bera olaman deb javob qaytar."},
+        {"role": "system", "content": "Quyidagi faylga asoslangan holda savolga javob ber. Agar fayldagi ma'lumotlardan tashqari savol berilsa, sizga yo'l harakati qoidalari haqidagi savollarizga yordam bera olaman deb javob qaytar. Shuningdek O'zbekiston yo'l harakatiga oid barcha savollarga javob ber."},
         {"role": "assistant", "content": relevant_text},
         {"role": "user", "content": query},
     ]
